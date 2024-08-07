@@ -16,13 +16,7 @@ const MessagesList = () => {
             }`}
             key={message.content}
           >
-            {!isUser && (
-              <img
-                src="https://www.teamsmart.ai/next-assets/team/ai.jpg"
-                className="w-9 h-9 rounded-full"
-                alt="avatar"
-              />
-            )}
+            {!isUser && <img src="/img/ai.jpg" className="w-9 h-9 rounded-full" alt="avatar" />}
             <div
               style={{ maxWidth: 'calc(100% - 45px)' }}
               className={`group relative px-3 py-2 rounded-lg ${
@@ -35,7 +29,7 @@ const MessagesList = () => {
             </div>
             {isUser && (
               <img
-                src="https://www.teamsmart.ai/next-assets/profile-image.png"
+                src="/img/profile-image.png"
                 className="w-9 h-9 rounded-full cursor-pointer"
                 alt="avatar"
               />
@@ -45,11 +39,7 @@ const MessagesList = () => {
       })}
       {isLoadingAnswer && (
         <div className="flex justify-start mb-4">
-          <img
-            src="https://www.teamsmart.ai/next-assets/team/ai.jpg"
-            className="w-9 h-9 rounded-full"
-            alt="avatar"
-          />
+          <img src="/img/ai.jpg" className="w-9 h-9 rounded-full" alt="avatar" />
           <div className="loader ml-2 p-2.5 px-4 bg-gray-200 dark:bg-gray-800 rounded-full space-x-1.5 flex justify-between items-center relative">
             <span className="block w-3 h-3 rounded-full"></span>
             <span className="block w-3 h-3 rounded-full"></span>
