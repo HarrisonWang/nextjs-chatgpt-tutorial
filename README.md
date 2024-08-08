@@ -1,9 +1,12 @@
 # Next.js ChatGPT Tutorial Documentation
-> Build and customize your own ChatGPT-like web app using Next.js and the OpenAI API. The provided code serves as a foundation, and you can customize it to fit your specific use case. 
-<img alt="Screenshot" src="./public/img/screenshot.jpg" height="75%" width="75%"/>
+
+> Build and customize your own ChatGPT-like web app using Next.js and the OpenAI API. The provided code serves as a foundation, and you can customize it to fit your specific use case.
+
+![screenshot](./public/img/screenshot.jpg)
 
 ## Tutorial
-You can find a step-by-step tutorial [here](https://www.jakeprins.com/blog/how-to-create-a-chatgpt-application-using-next-js-and-the-openai-api). 
+
+You can find a step-by-step tutorial [here](https://www.jakeprins.com/blog/how-to-create-a-chatgpt-application-using-next-js-and-the-openai-api).
 
 ## Overview
 
@@ -16,24 +19,32 @@ The application uses the following components:
 
 ## Getting Started
 
-1.  Clone the repository and navigate to the project directory.
-    
-2.  Install the required dependencies by running `npm install` or `yarn`.
-    
-3.  Create a `.env.local` file in the project root and add your OpenAI API key:
-    ```
+1. Clone the repository and navigate to the project directory.
+
+2. Install the required dependencies by running `npm install` or `yarn`.
+
+3. Create a `.env.local` file in the project root and add your OpenAI API key:
+
+    ```dotenv
     OPENAI_API_KEY=your_openai_api_key
     ```
-4.  Start the development server by running `npm run dev` or `yarn dev`.
-    
-5.  Open your browser and navigate to `http://localhost:3000` to access the application.
-    
-6.  You can now interact with the chatbot using the input field at the bottom of the screen.
-    
+
+    or
+
+    ```dotenv
+    OPENAI_BASE_URL=openrouter_base_url
+    OPENAI_API_KEY=your_openrouter_api_key
+    ```
+
+4. Start the development server by running `npm run dev` or `yarn dev`.
+
+5. Open your browser and navigate to `http://localhost:3000` to access the application.
+
+6. You can now interact with the chatbot using the input field at the bottom of the screen.
 
 ## Customizing the Application
 
-#### Model Selection (Optional)
+### Model Selection (Optional)
 
 The current implementation of the application uses the "gpt-3.5-turbo" model for chat interactions. This model provides excellent performance for a wide range of tasks and is the recommended choice for most use cases.
 
@@ -45,7 +56,17 @@ const body = JSON.stringify({
   model: 'gpt-4', // Replace 'gpt-3.5-turbo' with 'gpt-4'
   stream: false
 })
-``` 
+```
+
+or
+
+```typescript
+  const body = JSON.stringify({
+    messages,
+    model: 'openai/gpt-4o-2024-08-06',
+    stream: false
+  })
+```
 
 Remember that the performance, response time, and pricing for different models may vary. Please refer to the OpenAI API documentation for more information on available models and their specific capabilities.
 
@@ -62,4 +83,3 @@ If you have any questions or need further assistance, don't hesitate to create a
 ## TeamSmart AI
 
 For a complete ChatGPT Chrome extension checkout [TeamSmart AI](https://www.teamsmart.ai/).
-
