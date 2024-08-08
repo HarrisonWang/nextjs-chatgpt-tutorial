@@ -12,8 +12,19 @@ const MessageForm = () => {
     setContent('')
   }
 
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault()
+      handleSubmit()
+    }
+  }
+
   return (
-    <form className="relative mx-auto max-w-3xl rounded-t-xl" onSubmit={handleSubmit}>
+    <form
+      className="relative mx-auto max-w-3xl rounded-t-xl"
+      onSubmit={handleSubmit}
+      onKeyDown={handleKeyDown}
+    >
       <div className=" border-gray-200 h-[130px] rounded-t-xl backdrop-blur border-t border-l border-r border-gray-500/10 dark:border-gray-50/[0.06] bg-white supports-backdrop-blur:bg-white/95 p-5">
         <label htmlFor="content" className="sr-only">
           Your message
