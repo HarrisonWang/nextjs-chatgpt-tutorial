@@ -1,4 +1,5 @@
-import ReactMarkdown from 'react-markdown';
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 import { useMessages } from 'utils/useMessages'
 
 const MessagesList = () => {
@@ -26,7 +27,7 @@ const MessagesList = () => {
                   : 'ml-2 bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-200'
               }`}
             >
-              <ReactMarkdown>{message.content}</ReactMarkdown>
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>{message.content}</ReactMarkdown>
             </div>
             {isUser && (
               <img
