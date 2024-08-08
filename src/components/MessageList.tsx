@@ -1,3 +1,4 @@
+import ReactMarkdown from 'react-markdown';
 import { useMessages } from 'utils/useMessages'
 
 const MessagesList = () => {
@@ -25,7 +26,7 @@ const MessagesList = () => {
                   : 'ml-2 bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-200'
               }`}
             >
-              {message.content.trim()}
+              <ReactMarkdown>{message.content}</ReactMarkdown>
             </div>
             {isUser && (
               <img
